@@ -103,12 +103,23 @@ com.patient_service
 ```
 
 ---
+## Récapitulatif Sprint 1
+
+| Élément                                | Statut | Détails                             |
+| -------------------------------------- | ------ | ----------------------------------- |
+| Projet Spring Boot (`patient-service`) | ✅      | Créé avec les bonnes dépendances    |
+| Base de données relationnelle (3NF)    | ✅      | MySQL + entité `Patient` conforme   |
+| Endpoints REST fonctionnels            | ✅      | `GET`, `POST`, `PUT`, `GET by id`   |
+| Données de test chargées               | ✅      | via `data.sql`                      |
+| Sécurité activée                       | ✅      | Auth HTTP Basic (`admin:admin123`)  |
+| Fichier `README.md` structuré          | ✅      | Généré et prêt pour le dépôt GitHub |
+| Test avec `requests.http`              | ✅      | Effectué avec succès                |
+
+
 
 ## 💡 À venir dans les sprints suivants
 
-- Gestion des notes du médecin (NoSQL – MongoDB)
-- Évaluation du risque de diabète
-- Frontend utilisateur et API Gateway
+
 - Dockerisation complète
 
 ---
