@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.*;
 
 import java.util.List;
@@ -26,7 +27,14 @@ public class PatientControllerIntegrationTest {
 
     @Test
     public void testGetAllPatients() {
-        ResponseEntity<List> response = restTemplateWithAuth.getForEntity("/patients", List.class);
+        ResponseEntity<List<Patient>> response = restTemplateWithAuth.exchange(
+                "/patients",
+                HttpMethod.GET,
+                null,
+                new ParameterizedTypeReference<>() {}
+
+        );
+
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody()).isNotNull();
     }
